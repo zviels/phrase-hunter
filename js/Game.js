@@ -7,6 +7,7 @@ class Game {
         this.missed = 0;
         this.phrases = data;
         this.activePhrase = null;
+        this.isOver = false;
 
     }
 
@@ -21,6 +22,7 @@ class Game {
     get tries() {
 
         return document.querySelectorAll('.tries');
+
     }
 
     // Methods
@@ -110,7 +112,8 @@ class Game {
         resetHearts();
         resetOverlay();
 
-        this.missed = 0;      
+        this.missed = 0;
+        this.isOver = false;
 
     }
 
@@ -118,6 +121,7 @@ class Game {
 
     gameOver() {
 
+        this.isOver = true;
         const h1 = document.querySelector('h1');
 
         if (this.missed === 5) {
