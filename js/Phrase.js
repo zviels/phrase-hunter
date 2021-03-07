@@ -4,7 +4,27 @@ class Phrase {
 
     constructor(phrase) {
 
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
+
+    }
+
+    // Getters
+
+    // phraseDiv
+    // This Getter Returns The Div Element That Represents The Phrase
+
+    get phraseDiv() {
+
+        return document.querySelector('#phrase');
+
+    }
+
+    // phraseLetters
+    // This Getter Returns The UL Element That Contains All The Letters Of The Phrase
+
+    get phraseLetters() {
+
+        return this.phraseDiv.firstElementChild;
 
     }
 
@@ -33,8 +53,7 @@ class Phrase {
 
         // Add The Phrase To The Gameboard
 
-        const phrase = document.querySelector('#phrase');
-        const ul = phrase.firstElementChild;
+        const ul = this.phraseLetters;
 
         const letters = this.phrase.split('');
 
@@ -44,6 +63,14 @@ class Phrase {
             ul.appendChild(li);
             
         });
+
+    }
+
+    // clearPhraseFromDisplay
+
+    clearPhraseFromDisplay() {
+
+        this.phraseLetters.innerHTML = '';
 
     }
 

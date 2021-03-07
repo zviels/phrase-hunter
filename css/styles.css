@@ -60,7 +60,7 @@ button {
   cursor: pointer;
 }
 
-#btn__reset {
+#reset-btn {
 	width: 200px;
 	margin: 0 auto;
 }
@@ -107,8 +107,6 @@ button {
   width: 15px;
 }
 
-
-
 .show {
   color: #fff;
   background-color: #4ac0d5;
@@ -142,7 +140,7 @@ button {
   color: #FFFFFF;
 }
 
-.btn__reset {
+.reset-btn {
   padding: 16px;
   margin: 50px auto;
   background: #f7a964;
@@ -153,7 +151,7 @@ button {
   border-right: solid 3px rgba(0, 0, 0, .3)
 }
 
-.btn__reset:active {
+.reset-btn:active {
   padding: 14px 16px 16px 14px;
   border-bottom: solid 4px rgba(0, 0, 0, 0);
   border-right: solid 3px rgba(0, 0, 0, 0);
@@ -201,4 +199,11 @@ button {
 
 .lose a {
   color: var(--color-lose);
+}
+
+/* Hearts */
+
+.tries img {
+  height: 35px;
+  width: 30px;
 }
