@@ -5,7 +5,7 @@ const keyboard = document.querySelector('#keyboard');
 
 // Variables
 
-const game = new Game();
+let game;
 
 // Functions
 
@@ -15,7 +15,15 @@ const addListeners = () => {
 
     // Add An Event Listener To The Reset Button
 
-    resetButton.addEventListener('click', () => game.startGame());
+    resetButton.addEventListener('click', () => {
+
+        if (game && game.activePhrase)
+            game.resetGame();
+        
+        game = new Game();
+        game.startGame()
+        
+    });
 
     // Add An Event Listener To The Onscreen Keyboard
 
