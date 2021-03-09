@@ -7,7 +7,20 @@ class Game {
         this.missed = 0;
         this.phrases = data;
         this.activePhrase = null;
-        this.isOver = false;
+
+    }
+
+    // Setters
+
+    set isOver(isOver) {
+
+        this._isOver = isOver;
+
+    }
+
+    set numOfHearts(numOfHearts) {
+
+        this._numOfHearts = numOfHearts;
 
     }
 
@@ -25,6 +38,30 @@ class Game {
 
     }
 
+    get h1() {
+
+        return document.querySelector('h1');
+
+    }
+
+    get resetButton() {
+
+        return document.querySelector('#reset-btn');
+
+    }
+
+    get isOver() {
+
+        return this._isOver;
+
+    }
+
+    get numOfHearts() {
+
+        return this._numOfHearts;
+
+    }
+
     // Methods
 
     // getRandomPhrase
@@ -39,12 +76,16 @@ class Game {
 
     startGame() {
 
+        this.numOfHearts = 5;
+
         if (this.activePhrase)
             this.resetGame();
 
-        this.overlay.style.display = 'none';
+        this.overlay.classList.add('animate__animated', 'animate__slideOutUp');
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
+
+        this.tries.forEach(li => li.firstElementChild.classList.add('animate__animated', 'animate__heartBeat', 'animate__slow', 'animate__delay-1s'));
 
     }
 
@@ -60,10 +101,11 @@ class Game {
     // removeLife
 
     removeLife() {
+        
+        this.tries[-- this.numOfHearts].innerHTML = '<img src="images/lostHeart.png" alt="Lost Heart Icon">';
+        this.tries[this.numOfHearts].firstElementChild.classList.add('animate__animated', 'animate__bounceIn');
 
-        this.tries[this.missed ++].innerHTML = '<img src="images/lostHeart.png" alt="Lost Heart Icon">';
-
-        if (this.missed === 5)
+        if (++ this.missed === 5)
             this.gameOver();
 
     }
@@ -100,8 +142,9 @@ class Game {
 
         const resetOverlay = () => {
 
-            this.overlay.classList.remove('lose', 'win');
-            this.overlay.classList.add('start');
+            this.overlay.classList.remove('lose', 'win', 'animate__animated', 'animate__slideInDown');
+            this.overlay.classList.add('start', 'animate__delay-1s');
+            this.h1.textContent = 'Loading...';
 
         }
 
@@ -122,23 +165,24 @@ class Game {
     gameOver() {
 
         this.isOver = true;
-        const h1 = document.querySelector('h1');
 
         if (this.missed === 5) {
 
-            h1.textContent = 'You Lost The Game!';
+            this.h1.textContent = 'You Lost The Game!';
             this.overlay.classList.replace('start', 'lose');
 
         }
 
         else {
 
-            h1.textContent = 'You Won The Game!';
+            this.h1.textContent = 'You Won The Game!';
             this.overlay.classList.replace('start', 'win');
 
         }
 
-        this.overlay.style.display = '';
+        this.overlay.classList.remove('animate__delay-1s');
+        this.overlay.classList.replace('animate__slideOutUp', 'animate__slideInDown');
+        this.resetButton.textContent = 'Play Again';
 
     }
 

@@ -4,14 +4,14 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win: #9BCE8D;
+  --color-lose: #CD5D67;
   --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --font-size-large: 60px;
+  --font-size-large: 65px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
 }
@@ -24,6 +24,7 @@
 }
 
 body {
+  background-color: #292929;
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
@@ -49,7 +50,7 @@ h1 {
 button {
   margin: 6px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: 1rem 1.5rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -61,8 +62,21 @@ button {
 }
 
 #reset-btn {
+  font-size: 25px;
 	width: 200px;
-	margin: 0 auto;
+	margin: 15px auto;
+  background-color: #B6465F;
+  color: #fff;
+  transition: 0.5s;
+}
+
+#reset-btn:focus {
+  outline: none;
+}
+
+#reset-btn:hover, #reset-btn:focus {
+  background-color: #A23F54;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
 }
 
 .main-container {
@@ -86,7 +100,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: #F9F4F1;
 }
 
 
@@ -97,19 +111,19 @@ button {
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  margin-right: 3.5px;
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
 }
 
 .space {
-  width: 15px;
+  width: 17.5px;
 }
 
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
+  color: #F9F4F1;
+  background-color: #64A6BD;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -127,16 +141,16 @@ button {
   justify-content: center;
 }
 
-.chosen {
-  background: #3a3f58;
+button.chosen {
+  background: var(--color-win);
   border-radius: 5px;
   font-size: var(--font-size-medium);
-  color: #FFFFFF;
+  color: #F9F4F1;
 }
 
-.wrong {
-  background: #f7a964;
-  color: #FFFFFF;
+button.wrong {
+  background: var(--color-lose);
+  color: #F9F4F1;
 }
 
 .reset-btn {
@@ -156,7 +170,6 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
-
 /* Overlay */
 
 #overlay {
@@ -169,7 +182,7 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 5px;
+  z-index: 1;
 }
 
 .title {
@@ -177,7 +190,8 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #F7B05B;
+  transition: 1s;
 }
 
 .start a {
@@ -204,5 +218,27 @@ button {
 
 .tries img {
   height: 35px;
-  width: 30px;
+  width: 40px;
+}
+
+/* Hidden Letters */
+
+.hide {
+  background-color: #F9F4F1;
+}
+
+/* Keys */
+
+.key {
+  color: #F9F4F1;
+  background-color: #3d3d3d;
+}
+
+.key:focus {
+  outline: none;
+}
+
+.key:hover:not(:disabled), .key:focus {
+  background-color: #474747;
+  box-shadow: 0px 2px 5px rgba(65, 65, 65, 0.5);
 }

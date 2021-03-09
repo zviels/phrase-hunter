@@ -34,7 +34,7 @@ const addListeners = () => {
 
         if (letterPressed && (!(game.isOver))) {
 
-            const keyPressed = keyboard.querySelector('.' + e.key);
+            const keyPressed = keyboard.querySelector('.' + e.key.toLowerCase());
             game.handleInteraction(keyPressed);
 
         }
@@ -43,14 +43,6 @@ const addListeners = () => {
 
 }
 
-// Run
-
-const run = () => {
-
-    addListeners();
-
-}
-
 // Run The Script
 
-run();
+addListeners();
