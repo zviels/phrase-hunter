@@ -78,9 +78,6 @@ class Game {
 
         this.numOfHearts = 5;
 
-        // if (this.activePhrase)
-            // this.resetGame();
-
         this.overlay.classList.add('animate__animated', 'animate__slideOutUp');
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
