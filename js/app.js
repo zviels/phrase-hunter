@@ -5,7 +5,7 @@ const keyboard = document.querySelector('#keyboard');
 
 // Variables
 
-let game;
+let game = new Game();
 
 // Functions
 
@@ -20,7 +20,6 @@ const addListeners = () => {
         if (game && game.activePhrase)
             game.resetGame();
         
-        game = new Game();
         game.startGame()
         
     });

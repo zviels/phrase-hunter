@@ -5,7 +5,7 @@ class Game {
     constructor() {
 
         this.missed = 0;
-        this.phrases = data;
+        this.phrases = [];
         this.activePhrase = null;
 
     }
@@ -68,7 +68,11 @@ class Game {
 
     getRandomPhrase() {
 
-        return this.phrases [ Math.floor(Math.random() * this.phrases.length) ];
+        const randomIndex = Math.floor(Math.random() * this.phrases.length);
+        const randomPhrase = this.phrases[randomIndex];
+
+        this.phrases.splice(randomIndex, 1);
+        return randomPhrase;
 
     }
 
@@ -79,7 +83,11 @@ class Game {
         this.numOfHearts = 5;
 
         this.overlay.classList.add('animate__animated', 'animate__slideOutUp');
-        this.activePhrase = this.getRandomPhrase();
+
+        if (this.phrases.length === 0)
+            this.phrases = [ ... data ];
+        
+        this.activePhrase = this.getRandomPhrase();    
         this.activePhrase.addPhraseToDisplay();
 
         this.tries.forEach(li => li.firstElementChild.classList.add('animate__animated', 'animate__heartBeat', 'animate__slow', 'animate__delay-1s'));
