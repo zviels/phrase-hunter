@@ -25,7 +25,7 @@ Players can guess a letter only once. After they have guessed a letter, that let
 ## Preview
 
 <a href="https://zviels.github.io/phrase-hunter">
-  <img src="https://i.imgur.com/pPslBnF.gif" alt="App Preview" width="100%">
+  <img src="https://deab9i1yeabp0.cloudfront.net/github/treehouse/phrase-hunter/phrase-hunter.gif" alt="App Preview" width="100%">
 </a>
 
 ## Quick Start
@@ -54,7 +54,7 @@ Here is what I learned before I started working on the project -
 
 ### Project Requirements
 
-You can view the project requirements [here](https://i.imgur.com/WqFwmt1.jpg).
+You can view the project requirements [here](https://deab9i1yeabp0.cloudfront.net/github/treehouse/phrase-hunter/project-requirements.jpg).
 
 Please note - changes have been made to the app since receiving the project review.
 
@@ -81,7 +81,7 @@ There are two possible grades for each Techdegree project - "Meets Expectations"
 
 This project received the **"Exceeds Expectations"** rating.
 
-See the full project review [here](https://i.imgur.com/b4KQc1M.jpg).
+See the full project review [here](https://deab9i1yeabp0.cloudfront.net/github/treehouse/phrase-hunter/project-review.jpg).
 
 :100:
 
@@ -94,7 +94,7 @@ See the full project review [here](https://i.imgur.com/b4KQc1M.jpg).
 ## Thanks
 
 <a href="https://teamtreehouse.com">
-  <img src="https://static.teamtreehouse.com/assets/marketing/opengraph/logo_twitter-cd0ecb90408499f45a2191805f54362981da5a69ddcfaa6ec93556d64e289036.png" alt="Treehouse Logo" width="100%">
+  <img src="https://deab9i1yeabp0.cloudfront.net/github/treehouse/treehouse-logo.png" alt="Treehouse Logo" width="100%">
 </a>
 
 Thanks to [Treehouse](https://teamtreehouse.com) for providing the starter files for this project -
